@@ -1,0 +1,10 @@
+package todo.entities;
+
+import java.util.Date;
+
+public class Task {
+	private long id;
+	private String summary;
+	private String status;
+	private Date dueDate;
+}

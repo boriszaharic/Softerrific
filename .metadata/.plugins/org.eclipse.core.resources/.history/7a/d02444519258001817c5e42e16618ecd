@@ -1,0 +1,8 @@
+package todo.entities;
+
+public class Task {
+	private long id;
+	private String summary;
+	private String status;
+	private String dueDate;
+}

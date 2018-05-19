@@ -1,0 +1,34 @@
+<div class="container">
+  <!-- <button class="btn btn-default" name="new-task" onclick="location.href='http://localhost:4200/newtask'">New task</button> -->
+  <button class="btn btn-default" name="new-task" (click)="newTask()">New task</button>
+  <label id="showLabel"><input type="checkbox" name="completed-tasks" id="showCheckbox" (click)="showCompletedTasks(checkBoxChecked)" checked="checked">Show completed tasks</label>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <th>Summary <button (click)="sort('summary')" class="glyphicon glyphicon-triangle-bottom"></button></th>
+      <th>Status <button (click)="sort('status')" class="glyphicon glyphicon-triangle-bottom"></button></th>
+      <th>Due date <button (click)="sort('dueDate')" class="glyphicon glyphicon-triangle-bottom"></button></th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{task.summary}}</td>
+        <td>
+          <select (change)="statusChange(task)" class="status">
+            <option>{{task.status}}</option>
+            <option>Completed</option>
+            <option>Pending</option>
+            <option>In progress</option>
+          </select>
+        </td>
+        <td>{{task.dueDate}}</td>
+        <td>
+          <button class="glyphicon glyphicon-pencil" (click)="updateTask(task)"></button>
+          <button class="glyphicon glyphicon-ok" (click)="completeTask(task)"></button>
+          <button class="glyphicon glyphicon-remove" (click)="deleteTask(task)"></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

@@ -1,0 +1,14 @@
+.content{
+  margin-left: auto;
+  margin-right: auto;
+  width:500px;
+}
+
+.hidden-status{
+  visibility: hidden;
+  height: 10px;
+}
+
+.cancelBtn{
+  float:right;
+}
